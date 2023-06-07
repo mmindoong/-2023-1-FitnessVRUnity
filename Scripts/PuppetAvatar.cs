@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Microsoft.Azure.Kinect.BodyTracking;
@@ -92,14 +92,58 @@ public class PuppetAvatar : MonoBehaviour
                 // get the absolute offset
                 Quaternion absOffset = absoluteOffsetMap[(JointId)j];
                 Transform finalJoint = PuppetAnimator.GetBoneTransform(MapKinectJoint((JointId)j));
+                
+
                 finalJoint.rotation = absOffset * Quaternion.Inverse(absOffset) * KinectDevice.absoluteJointRotations[j] * absOffset;
                 if (j == 0)
                 {
-                    // character root plus translation reading from the kinect, plus the offset from the script public variables
-                    finalJoint.position = CharacterRootTransform.position + new Vector3(RootPosition.transform.localPosition.x, RootPosition.transform.localPosition.y + OffsetY, RootPosition.transform.localPosition.z - OffsetZ);
+                //character root plus translation reading from the kinect, plus the offset from the script public variables
+                finalJoint.position = CharacterRootTransform.position + new Vector3(RootPosition.transform.localPosition.x, RootPosition.transform.localPosition.y + OffsetY, RootPosition.transform.localPosition.z - OffsetZ);
                 }
-            }
+      }
         }
-    }
+
+
+
+  }
+
+  private float CalculateJointAngle(Vector3 A, Vector3 B, Vector3 C)
+  {
+    // 관절 사이의 벡터를 계산
+    Vector3 AbVector;
+    Vector3 BcVector;
+
+    AbVector.x = B.x - A.x;
+    AbVector.y = B.y - A.y;
+    AbVector.z = B.z - A.z;
+
+    BcVector.x = C.x - B.x;
+    BcVector.y = C.y - B.y;
+    BcVector.z = C.z - B.z;
+
+    // 합 벡터의 방향을 정규화함
+    float AbNorm = (float)Mathf.Sqrt(AbVector.x * AbVector.x + AbVector.y * AbVector.y + AbVector.z * AbVector.z);
+    float BcNorm = (float)Mathf.Sqrt(BcVector.x * BcVector.x + BcVector.y * BcVector.y + BcVector.z * BcVector.z);
+    Vector3 AbVectorNorm;
+    Vector3 BcVectorNorm;
+
+    AbVectorNorm.x = AbVector.x / AbNorm;
+    AbVectorNorm.y = AbVector.y / AbNorm;
+    AbVectorNorm.z = AbVector.z / AbNorm;
+
+    BcVectorNorm.x = BcVector.x / BcNorm;
+    BcVectorNorm.y = BcVector.y / BcNorm;
+    BcVectorNorm.z = BcVector.z / BcNorm;
+
+
+    // 가운데 각도 계산
+    float result = AbVectorNorm.x * BcVectorNorm.x + AbVectorNorm.y * BcVectorNorm.y + AbVectorNorm.z * BcVectorNorm.z;
+
+
+    result = (float)Mathf.Acos(result) * 180.0f / 3.1415926535897f;
+    return result;
+
+
+  }
 
 }

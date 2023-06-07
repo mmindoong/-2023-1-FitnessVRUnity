@@ -66,24 +66,9 @@ namespace Mediapipe.Unity
         List<Vector3> frame = new List<Vector3>();
 
       }
-      /*
+      
       void FixedUpdate()
-      {
-        for (int i = 0; i < (int)MediaPipeLandmark.GetLandmarkCount(); i++)
-        {
-          List<Vector3> frame = new List<Vector3>();
-          Vector3 temp = new Vector3();
-          temp.x = MediaPipeLandmark[i]
-
-
-        }
-  
-        frame = points[frameIndex];
-        for (int i = 0; i < 17; i++)
-        {
-          cubes[i].position = frame[i];
-        }
-
+      { 
         // hip - point 1,0,4
         // rotate 90 degree
         Vector3 temp = frame[1] - frame[0];
@@ -143,7 +128,7 @@ namespace Mediapipe.Unity
           frameIndex = 0;
         }
       }
-      */
+      
     }
   }
 }
