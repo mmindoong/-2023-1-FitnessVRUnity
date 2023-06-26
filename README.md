@@ -2,28 +2,6 @@
 # FitnessVR
 3D Pose Analysis and Feedback Architecture
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>목차</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About the Project</a>
-      <ul>
-        <li><a href="#built-with">Built with</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#application-contents">Application Contents</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ol>
-</details>
-
 ## About the Project
 <div align="center"><img src=https://github.com/mmindoong/-2023-1-FitnessVRUnity/assets/70145314/33aef95f-babe-4892-ad99-14c812c1eae3 width="400"></div> 
 
@@ -119,6 +97,7 @@ width="400"></div>
 |독수리 자세|양발을 모으고 양팔을 벌려준 채, 오른팔이 왼팔 밑으로 하며 팔꿈치를 꼬는 동작|1. 밧줄처럼 양팔을 비틀 때, 양손 바닥이 완벽히 맞닿지 않음.</br>2. 허리는 펴고, 다리의 무릎이 굽혀야 지탱할 수 있다.</br> 3.오른팔이 왼팔 밑으로 팔꿈치를 꼬았는지 확인해야 한다. |정면과 측면을 고려하여 동작을 수행해야 한다. |
 |전사 자세|골반이 정렬을 맞춘 상태에서 한쪽은 무릎을 펴고, 한쪽은 무릎을 굽혀 두 팔은 뻗고 다리를 지지하는 동작|1. 골반은 항상 정면을 바라보도록하고, 뒷다리 무릎을 펴야 한다. </br>2. 두 다리가 골반 넓이로 벌려야 한다. 측면으로 보았을 때, 한쪽다리는 수직으로 무릎을 굽히도록 한다</br> 3.측면 기준으로 길게 뻗는 발끝은 정면을 향하도록 한다. </br> 4. 상체는 골반 정렬과 일직선이 되도록 팔을 뻗고 있는지 확인한다. |정면과 측면을 고려하여 동작을 수행해야 한다. |
 </center>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Conclusion
 시스템은 사용자의 자세를 추적하고 실시간 피드백을 제공하는 방법을 성공적으로 구현함으로써 동작 인식 기반에 모션 분석 시스템을 더해 사용자 맞춤형 아키텍쳐를 구축하였다. 시스템은 사용자와 강의자의 모션을 인식하고 매핑할 수 있고, 사용자의 동작을 전면, 상단 및 측면 세 가지 다른 평면으로 투영하고, 사용자의 동작을 기반으로 관절 각도를 업데이트하는 과정을 통해 분석할 수 있다. 또한 시스템은 이미지 소스 및 감지를 위한 사용자 인터페이스와 사용자의 시선을 따라가는 VR 스크린을 포함하여 사용자에게 피드백을 제공할 수 있다.
@@ -126,6 +105,8 @@ width="400"></div>
 * 시스템은 사용자의 자세에 대한 정확하고 실시간의 피드백을 제공하여 사용자가 자세 형성을 개선하는 데 도움이 될 것으로 기대된다. 특히 정확한 자세 형성이 중요한 요가와 같은 활동에 유용할 수 있다. 이후 시스템이 다양한 각도에서 연속적인 피드백을 제공하고 동시에 두 개의 뷰를 표시할 수 있도록 개선한다면, 사용자에게 보다 종합적인 피드백을 제공할 수 있을 것이다.
 ### 활용 방안
 * 실제로 현재 게임 산업은 개인화가 핵심 경쟁력이다. 하나의 게임도 사용자들이 각자의 수준에 맞게 즐길 수 있도록 만드는 것을 목표로 한다. 게임을 너무 어렵게 만들면 초보자들은 즐기기가 어렵고 너무 쉬우면 마니아들은 금방 싫증을 내기 때문이다. 이처럼 사용자 맞춤형으로 컨텐츠를 진행함으로써 난이도 수준을 실시간으로 조절할 수 있다. 제공된 데이터를 바탕으로 맞춤형 연습과 트레이닝 가이드를 제공함으로써 게임과 헬스케어의 결합을 더 향상시킬 수 있다.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
